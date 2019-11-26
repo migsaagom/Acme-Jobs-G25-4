@@ -266,7 +266,63 @@
 		<property name="moment" value="2019/05/31 18:00" />
 
 	</bean>
-	
+
+	<!-- Job -->
+
+	<bean id="job1" class="acme.entities.jobs.Job">
+		<property name="referenceNumber" value="EMP1-JOB1" />
+		<property name="finalMode" value="true" />
+		<property name="title" value="Title 1" />
+		<property name="deadline" value="2020/10/10 10:00" />
+		<property name="salary" value="€ 15,000.98 " />
+		<property name="description" value="Santiago" />
+		<property name="moreInfo" value="http://www.example.com" />
+		<property name="employer" ref="employer1Employer" />
+	</bean>
+
+	<bean id="job2" class="acme.entities.jobs.Job">
+		<property name="referenceNumber" value="EMP1-JOB2" />
+		<property name="finalMode" value="true" />
+		<property name="title" value="Title 2" />
+		<property name="deadline" value="2030/09/10 23:00" />
+		<property name="salary" value="€ 20,000.00 " />
+		<property name="description" value="Martin" />
+		<property name="moreInfo" value="http://www.example.com" />
+		<property name="employer" ref="employer1Employer" />
+	</bean>
+
+	<!-- Employers -->
+
+	<bean name="employer1UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="employer1" />
+		<property name="password" value="employer1" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Employer" />
+				<property name="surname	" value="One" />
+				<property name="email" value="employer1@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="employer1Employer" />
+				<ref bean="employer1Authenticated" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="employer1Employer" class="acme.entities.roles.Employer">
+		<property name="company" value="employer1, Inc." />
+		<property name="sector" value="Sector 1" />
+		<property name="userAccount" value="employer1UserAccount" />
+	</bean>
+	<bean name="employer1Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="employer1UserAccount" />
+	</bean>
+
+
+
 	<!-- Provider -->
 	<bean name="providerUserAccount" class="acme.framework.entities.UserAccount">
 		<property name="username" value="provider" />
@@ -286,7 +342,7 @@
 			</list>
 		</property>
 	</bean>
-	
+
 	<bean name="providerProvider" class="acme.entities.roles.Provider">
 		<property name="company" value="company" />
 		<property name="sector" value="sector" />
@@ -296,7 +352,7 @@
 	<bean name="providerAuthenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="providerUserAccount" />
 	</bean>
-	
+
 	<!-- Consumer -->
 	<bean name="consumerUserAccount" class="acme.framework.entities.UserAccount">
 		<property name="username" value="consumer" />
@@ -316,7 +372,7 @@
 			</list>
 		</property>
 	</bean>
-	
+
 	<bean name="consumerConsumer" class="acme.entities.roles.Consumer">
 		<property name="company" value="company" />
 		<property name="sector" value="sector" />
