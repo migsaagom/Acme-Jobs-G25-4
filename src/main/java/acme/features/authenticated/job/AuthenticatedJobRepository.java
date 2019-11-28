@@ -13,6 +13,6 @@ public interface AuthenticatedJobRepository extends AbstractRepository {
 	@Query("select j from Job j where j.id = ?1")
 	Job findOneById(int id);
 
-	@Query("select j from Job j where employer.id >= ?1")
+	@Query("select j from Job j")
 	Collection<Job> findManyByEmployerId(int employerId);
 }

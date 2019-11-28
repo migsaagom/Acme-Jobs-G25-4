@@ -361,6 +361,16 @@
 		<property name="employer" ref="employer1Employer" />
 	</bean>
 
+
+	<bean id="job3" class="acme.entities.jobs.Job">
+		<property name="referenceNumber" value="EMP1-JOB2" />
+		<property name="finalMode" value="true" />
+		<property name="title" value="Title 2" />
+		<property name="deadline" value="2030/09/10 23:00" />
+		<property name="salary" ref="money06" />
+		<property name="description" value="Martin" />
+		<property name="moreInfo" value="http://www.example.com" />
+		</bean>
 	<!-- Employer -->
 	<bean name="employer1UserAccount" class="acme.framework.entities.UserAccount">
 		<property name="username" value="employer1" />

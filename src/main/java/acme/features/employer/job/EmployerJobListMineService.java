@@ -14,7 +14,7 @@ import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class EmployerListMineJobListService implements AbstractListService<Employer, Job> {
+public class EmployerJobListMineService implements AbstractListService<Employer, Job> {
 
 	// -----------------Internal state-------------------------------
 
@@ -41,6 +41,7 @@ public class EmployerListMineJobListService implements AbstractListService<Emplo
 	@Override
 	public Collection<Job> findMany(final Request<Job> request) {
 		assert request != null;
+		
 		Collection<Job> result;
 
 		Principal principal;

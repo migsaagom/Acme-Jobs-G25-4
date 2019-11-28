@@ -9,7 +9,7 @@
 	<acme:form-textarea code="employer.job.form.label.title" path="title" />
 	<acme:form-textbox code="employer.job.form.label.deadline" path="deadline" />
 	<acme:form-money code="employer.job.form.label.salary" path="salary" />
-	<acme:form-textbox code="employer.job.form.label.description" path="descriptor" />
+	<acme:form-textarea code="employer.job.form.label.description" path="description" />
 	<acme:form-textbox code="employer.job.form.label.moreInfo" path="moreInfo" />
 
 </acme:form>
