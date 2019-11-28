@@ -1,0 +1,4 @@
+worker.application.list.label.moment = Moment
+worker.application.list.label.status = Status
+worker.application.list.label.worker = Worker
+worker.application.list.label.job = Job

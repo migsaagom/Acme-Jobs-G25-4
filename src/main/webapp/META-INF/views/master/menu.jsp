@@ -44,6 +44,11 @@
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.administrator.customisations" action="/administrator/customisation/update" />
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.worker.application" access="hasRole('Worker')">
+			<acme:menu-suboption code="master.menu.worker.application.list" action="/worker/application/list" />
+			<acme:menu-separator />
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.requests" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.authenticated.request" action="/authenticated/request/list" />

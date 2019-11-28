@@ -55,6 +55,9 @@ master.menu.requests = Peticiones
 master.menu.authenticated.request = Peticiones
 master.menu.provider.request.create = Crear Peticiones
 
+# master.menu.worker ########################################################
+master.menu.worker.application = Aplicaciones
+master.menu.worker.application.list = Listar aplicaciones
 
 # master.menu.consumer ##########################################################
 
