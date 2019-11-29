@@ -1,3 +1,4 @@
+
 package acme.features.employer.job;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,9 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 	@Autowired
 	EmployerJobRepository repository;
 
+
 	@Override
-	public boolean authorise(Request<Job> request) {
+	public boolean authorise(final Request<Job> request) {
 		// TODO Auto-generated method stub
 		assert request != null;
 		boolean result;
@@ -25,30 +27,30 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 		int jobId;
 		Employer employer;
 		Principal principal;
-		
-		jobId=request.getModel().getInteger("id");
-		job=this.repository.findOneById(jobId);
-		
-		employer=job.getEmployer();
-		principal=request.getPrincipal();
-		result=job.getFinalMode()||!job.getFinalMode()&&employer.getUserAccount().getId()==principal.getAccountId();
+
+		jobId = request.getModel().getInteger("id");
+		job = this.repository.findOneById(jobId);
+
+		employer = job.getEmployer();
+		principal = request.getPrincipal();
+		result = job.getFinalMode() || !job.getFinalMode() && employer.getUserAccount().getId() == principal.getAccountId();
 		return result;
 	}
 
 	@Override
-	public void unbind(Request<Job> request, Job entity, Model model) {
+	public void unbind(final Request<Job> request, final Job entity, final Model model) {
 		// TODO Auto-generated method stub
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
-	request.unbind(entity, model, "referenceNumber", "title", "deadline");
-	request.unbind(entity, model, "finalMode", "salary", "description", "moreInfo");
+		request.unbind(entity, model, "referenceNumber", "title", "deadline");
+		request.unbind(entity, model, "finalMode", "salary", "description", "moreInfo");
 
 	}
 
 	@Override
-	public Job findOne(Request<Job> request) {
+	public Job findOne(final Request<Job> request) {
 		// TODO Auto-generated method stub
 		assert request != null;
 
