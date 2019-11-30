@@ -361,16 +361,17 @@
 		<property name="employer" ref="employer1Employer" />
 	</bean>
 
-
-	<bean id="job3" class="acme.entities.jobs.Job">
-		<property name="referenceNumber" value="EMP1-JOB2" />
+<bean id="job3" class="acme.entities.jobs.Job">
+		<property name="referenceNumber" value="EMP2-JOB1" />
 		<property name="finalMode" value="true" />
-		<property name="title" value="Title 2" />
-		<property name="deadline" value="2030/09/10 23:00" />
+		<property name="title" value="Title 3" />
+		<property name="deadline" value="2010/09/10 23:00" />
 		<property name="salary" ref="money06" />
-		<property name="description" value="Martin" />
+		<property name="description" value="Gomez" />
 		<property name="moreInfo" value="http://www.example.com" />
-		</bean>
+		<property name="employer" ref="employer2Employer" />
+	</bean>
+
 	<!-- Employer -->
 	<bean name="employer1UserAccount" class="acme.framework.entities.UserAccount">
 		<property name="username" value="employer1" />
@@ -396,10 +397,35 @@
 		<property name="sector" value="Sector 1" />
 		<property name="userAccount" ref="employer1UserAccount" />
 	</bean>
+	
+	
 	<bean name="employer1Authenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="employer1UserAccount" />
 	</bean>
 	
+	<bean name="employer2UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="employer2" />
+		<property name="password" value="employer2" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Employer" />
+				<property name="surname" value="Two" />
+				<property name="email" value="employer1@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="employer2Employer" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean name="employer2Employer" class="acme.entities.roles.Employer">
+		<property name="company" value="Company2, Inc." />
+		<property name="sector" value="Sector 2" />
+		<property name="userAccount" ref="employer2UserAccount" />
+	</bean>
 	<!-- Worker -->
 	<bean name="worker1UserAccount" class="acme.framework.entities.UserAccount">
 		<property name="username" value="worker1" />

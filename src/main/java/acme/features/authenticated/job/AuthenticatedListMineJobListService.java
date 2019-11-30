@@ -1,6 +1,8 @@
 package acme.features.authenticated.job;
 
+import java.util.Calendar;
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,11 +45,11 @@ public class AuthenticatedListMineJobListService implements AbstractListService<
 		// TODO Auto-generated method stub
 		assert request != null;
 		Collection<Job> result;
+		Calendar cal = Calendar.getInstance();
+		Date dateNow = cal.getTime();
 
-		Principal principal;
+		result = this.repository.findManyByTime(dateNow);
 
-		principal = request.getPrincipal();
-		result = this.repository.findManyByEmployerId(principal.getActiveRoleId());
 		return result;
 
 	}
