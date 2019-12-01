@@ -1,3 +1,4 @@
+
 package acme.features.employer.job;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,9 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 	@Autowired
 	EmployerJobRepository repository;
 
+
 	@Override
-	public boolean authorise(Request<Job> request) {
+	public boolean authorise(final Request<Job> request) {
 		// TODO Auto-generated method stub
 		assert request != null;
 
@@ -32,6 +34,7 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 
 		employer = job.getEmployer();
 		principal = request.getPrincipal();
+
 		result = job.getFinalMode()
 				|| !job.getFinalMode() && employer.getUserAccount().getId() == principal.getAccountId();
 
@@ -39,7 +42,7 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 	}
 
 	@Override
-	public void unbind(Request<Job> request, Job entity, Model model) {
+	public void unbind(final Request<Job> request, final Job entity, final Model model) {
 		// TODO Auto-generated method stub
 		assert request != null;
 		assert entity != null;
@@ -51,7 +54,7 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 	}
 
 	@Override
-	public Job findOne(Request<Job> request) {
+	public Job findOne(final Request<Job> request) {
 		// TODO Auto-generated method stub
 		assert request != null;
 

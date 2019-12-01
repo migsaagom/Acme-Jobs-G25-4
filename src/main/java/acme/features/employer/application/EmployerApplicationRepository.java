@@ -1,5 +1,5 @@
 
-package acme.features.worker.application;
+package acme.features.employer.application;
 
 import java.util.Collection;
 
@@ -10,10 +10,10 @@ import acme.entities.applications.Application;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface WorkerApplicationRepository extends AbstractRepository {
+public interface EmployerApplicationRepository extends AbstractRepository {
 
-	@Query("select a from Application a where a.worker.id = ?1")
-	Collection<Application> findAppsByWorker(int id);
+	@Query("select a from Application a where a.job.employer.id = ?1")
+	Collection<Application> findAppsByJobOfEmployer(int id);
 
 	@Query("select a from Application a where a.id = ?1")
 	Application findOneById(int id);

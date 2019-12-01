@@ -58,6 +58,10 @@ master.menu.provider.request.create = Create Requests
 master.menu.worker.application = Applications
 master.menu.worker.application.list = List application
 
+# master.menu.employer ########################################################
+master.menu.employer.application = Applications
+master.menu.employer.application.list = List application
+
 # master.menu.consumer ##########################################################
 
 master.menu.consumer = Consumer
