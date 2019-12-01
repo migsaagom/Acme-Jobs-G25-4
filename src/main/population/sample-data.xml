@@ -361,6 +361,17 @@
 		<property name="employer" ref="employer2Employer" />
 	</bean>
 
+<bean id="job3" class="acme.entities.jobs.Job">
+		<property name="referenceNumber" value="EMP2-JOB1" />
+		<property name="finalMode" value="true" />
+		<property name="title" value="Title 3" />
+		<property name="deadline" value="2010/09/10 23:00" />
+		<property name="salary" ref="money06" />
+		<property name="description" value="Gomez" />
+		<property name="moreInfo" value="http://www.example.com" />
+		<property name="employer" ref="employer2Employer" />
+	</bean>
+
 	<!-- Employer -->
 	<bean name="employer1UserAccount" class="acme.framework.entities.UserAccount">
 		<property name="username" value="employer1" />
@@ -386,6 +397,8 @@
 		<property name="sector" value="Sector 1" />
 		<property name="userAccount" ref="employer1UserAccount" />
 	</bean>
+	
+	
 	<bean name="employer1Authenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="employer1UserAccount" />
 	</bean>

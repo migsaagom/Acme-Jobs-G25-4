@@ -22,6 +22,7 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 	public boolean authorise(final Request<Job> request) {
 		// TODO Auto-generated method stub
 		assert request != null;
+
 		boolean result;
 		Job job;
 		int jobId;
@@ -33,7 +34,10 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 
 		employer = job.getEmployer();
 		principal = request.getPrincipal();
-		result = job.getFinalMode() || !job.getFinalMode() && employer.getUserAccount().getId() == principal.getAccountId();
+
+		result = job.getFinalMode()
+				|| !job.getFinalMode() && employer.getUserAccount().getId() == principal.getAccountId();
+
 		return result;
 	}
 
@@ -44,7 +48,7 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "referenceNumber", "title", "deadline");
+		request.unbind(entity, model, "referenceNumber", "title", "deadline", "finalMode", "salary", "description", "moreInfo");
 		request.unbind(entity, model, "finalMode", "salary", "description", "moreInfo");
 
 	}
