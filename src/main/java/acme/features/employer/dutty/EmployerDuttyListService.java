@@ -19,9 +19,7 @@ public class EmployerDuttyListService implements AbstractListService<Employer, D
 	@Autowired
 	EmployerDuttyRepository	repository;
 
-	@Autowired
-	EmployerJobRepository	repo;
-
+	
 
 	@Override
 	public boolean authorise(final Request<Dutty> request) {

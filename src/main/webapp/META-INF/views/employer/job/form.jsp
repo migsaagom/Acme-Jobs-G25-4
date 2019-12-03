@@ -13,7 +13,6 @@
 	<acme:form-url code="employer.job.form.label.moreInfo" path="moreInfo" />
 	
 	<acme:form-hidden path="id" />
-	
 	<acme:menu-suboption code="employer.job.form.label.dutty" action="/employer/dutty/list?id=${id}"/>
 	
 
