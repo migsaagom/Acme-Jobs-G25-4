@@ -32,22 +32,25 @@ public class Application extends DomainEntity {
 	@Column(unique = true)
 	@NotBlank
 	@Length(min = 5, max = 15)
+	@Pattern(regexp = "^[A-Z]{4}-[A-Z]{4}:[A-Z]{4}$")
 	private String				reference;
 
 	@Past
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				moment;
 
-	@Pattern(regexp = "^PENDING|ACCEPTED|REJECTED$")
-	private String				status;
+	@NotNull
+	private TypeStatus			status;
 
 	@NotBlank
 	private String				statement;
 
 	@NotBlank
+	@Column(length = 1024)
 	private String				skills;
 
 	@NotBlank
+	@Column(length = 1024)
 	private String				qualifications;
 
 	// Relationships -------------------

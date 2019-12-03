@@ -1,6 +1,7 @@
 
 package acme.entities.companyRecords;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -23,31 +24,28 @@ public class CompanyRecord extends DomainEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	@NotBlank
-	private String name;
+	private String				name;
 
 	@NotBlank
-	private String sector;
-
+	private String				sector;
 
 	@NotBlank
 	private String				CEO;
 
+	@Column(length = 1024)
 	@NotBlank
-	private String description;
-
+	private String				description;
 
 	@URL
 	private String				website;
 
-
 	@Pattern(regexp = "\\+\\d{1,3}\\s\\(\\d{1,4}\\)\\s\\d{6,10}")
-	private String telephone;
-
+	private String				telephone;
 
 	@NotBlank
 	@Email
 	private String				email;
 
-	private boolean incorporated;
+	private boolean				incorporated;
 
 }
