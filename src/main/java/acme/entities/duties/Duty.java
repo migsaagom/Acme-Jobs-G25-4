@@ -1,4 +1,4 @@
-package acme.entities.dutties;
+package acme.entities.duties;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -16,7 +16,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class Dutty extends DomainEntity {
+public class Duty extends DomainEntity {
 
 	/**/
 	private static final long serialVersionUID = 1L;

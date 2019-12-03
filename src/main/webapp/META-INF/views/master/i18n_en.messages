@@ -46,6 +46,7 @@ master.menu.administrator.investor.create = Create investor
 master.menu.administrator.announcement.create = Create announcement
 master.menu.administrator.challenge.create = Create challenge
 master.menu.administrator.company-record.create = Create Company Record
+master.menu.employer.job = Job
 
 # master.menu.provider ########################################################
 

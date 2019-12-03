@@ -8,4 +8,6 @@
 	<acme:form-textbox code="employer.dutty.form.label.description" path="description" />
 	<acme:form-textbox code="employer.dutty.form.label.percentage" path="percentage" />
 
+	<acme:form-return code="employer.duty.form.return" />
+
 </acme:form>

@@ -6,14 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import acme.entities.dutties.Dutty;
+import acme.entities.duties.Duty;
 import acme.entities.roles.Employer;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
 
 @Controller
 @RequestMapping("/employer/dutty/")
-public class EmployerDuttyController extends AbstractController<Employer, Dutty> {
+public class EmployerDuttyController extends AbstractController<Employer, Duty> {
 	@Autowired
 	private EmployerDuttyListService listService;
 

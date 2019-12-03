@@ -3,26 +3,26 @@ package acme.features.employer.dutty;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.dutties.Dutty;
+import acme.entities.duties.Duty;
 import acme.entities.roles.Employer;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class EmployerDuttyShowService implements AbstractShowService<Employer, Dutty> {
+public class EmployerDuttyShowService implements AbstractShowService<Employer, Duty> {
 
 	@Autowired
 	EmployerDuttyRepository repository;
 
 	@Override
-	public boolean authorise(Request<Dutty> request) {
+	public boolean authorise(Request<Duty> request) {
 		assert request != null;
 		return true;
 	}
 
 	@Override
-	public void unbind(Request<Dutty> request, Dutty entity, Model model) {
+	public void unbind(Request<Duty> request, Duty entity, Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
@@ -32,9 +32,9 @@ public class EmployerDuttyShowService implements AbstractShowService<Employer, D
 	}
 
 	@Override
-	public Dutty findOne(Request<Dutty> request) {
+	public Duty findOne(Request<Duty> request) {
 		assert request != null;
-		Dutty result;
+		Duty result;
 		int id;
 		
 		id = request.getModel().getInteger("id");

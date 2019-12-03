@@ -5,7 +5,8 @@ employer.job.form.label.deadline = Fecha límite
 employer.job.form.label.title = Título
 employer.job.form.label.finalMode = Modo
 employer.job.form.label.referenceNumber = Número de referencia
-employer.job.form.label.dutty = Tarea
+employer.job.form.label.dutty = Tareas
+employer.job.form.return= Volver
 
 employer.job.list.label.moreInfo = Más información
 employer.job.list.label.description = Descripción

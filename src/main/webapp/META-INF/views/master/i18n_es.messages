@@ -58,6 +58,7 @@ master.menu.provider.request.create = Crear Peticiones
 # master.menu.worker ########################################################
 master.menu.worker.application = Aplicaciones
 master.menu.worker.application.list = Listar aplicaciones
+master.menu.employer.job= Trabajos
 
 # master.menu.employer ########################################################
 master.menu.employer.application = Aplicaciones
