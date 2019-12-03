@@ -28,8 +28,8 @@ public class EmployerJobController extends AbstractController<Employer, Job> {
 
 	@PostConstruct
 	private void initialise() {
-//		super.addCustomCommand(CustomCommand.LIST_MINE, BasicCommand.LIST, this.listMineService);
-		super.addBasicCommand(BasicCommand.LIST, this.listMineService);
+		super.addCustomCommand(CustomCommand.LIST_MINE, BasicCommand.LIST, this.listMineService);
+//		super.addBasicCommand(BasicCommand.LIST, this.listMineService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 	}
 

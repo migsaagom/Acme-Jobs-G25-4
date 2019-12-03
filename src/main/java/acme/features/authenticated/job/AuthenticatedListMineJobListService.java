@@ -11,7 +11,6 @@ import acme.entities.jobs.Job;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
-import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 
 @Service
@@ -49,6 +48,7 @@ public class AuthenticatedListMineJobListService implements AbstractListService<
 		Date dateNow = cal.getTime();
 
 		result = this.repository.findManyByTime(dateNow);
+		result.removeAll(this.repository.findManyByActive(false));
 
 		return result;
 

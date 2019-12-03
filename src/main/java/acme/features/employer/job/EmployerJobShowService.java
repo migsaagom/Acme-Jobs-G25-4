@@ -17,9 +17,8 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 	@Autowired
 	EmployerJobRepository repository;
 
-
 	@Override
-	public boolean authorise(final Request<Job> request) {
+	public boolean authorise(Request<Job> request) {
 		// TODO Auto-generated method stub
 		assert request != null;
 
@@ -34,7 +33,6 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 
 		employer = job.getEmployer();
 		principal = request.getPrincipal();
-
 		result = job.getFinalMode()
 				|| !job.getFinalMode() && employer.getUserAccount().getId() == principal.getAccountId();
 
@@ -42,19 +40,19 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 	}
 
 	@Override
-	public void unbind(final Request<Job> request, final Job entity, final Model model) {
+	public void unbind(Request<Job> request, Job entity, Model model) {
 		// TODO Auto-generated method stub
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "referenceNumber", "title", "deadline", "finalMode", "salary", "description", "moreInfo");
-		request.unbind(entity, model, "finalMode", "salary", "description", "moreInfo");
+		request.unbind(entity, model, "referenceNumber", "title", "deadline", "finalMode", "salary", "description","moreInfo");
+		request.unbind(entity, model, "finalMode", "salary", "moreInfo");
 
 	}
 
 	@Override
-	public Job findOne(final Request<Job> request) {
+	public Job findOne(Request<Job> request) {
 		// TODO Auto-generated method stub
 		assert request != null;
 
@@ -68,3 +66,4 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 	}
 
 }
+
