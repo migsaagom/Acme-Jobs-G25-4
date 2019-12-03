@@ -11,7 +11,10 @@
 	<acme:form-textbox code="employer.job.form.label.deadline" path="deadline" />
 	<acme:form-money code="employer.job.form.label.salary" path="salary" />
 	<acme:form-url code="employer.job.form.label.moreInfo" path="moreInfo" />
-	<acme:menu-suboption code="employer.job.form.label.dutty" value="" action="/employer/dutty/list" />
+	
+	<acme:form-hidden path="id" />
+	
+	<acme:menu-suboption code="employer.job.form.label.dutty" action="/employer/dutty/list?id=${id}"/>
 	
 
 </acme:form>
