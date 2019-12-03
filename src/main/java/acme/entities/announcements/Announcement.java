@@ -26,7 +26,6 @@ public class Announcement extends DomainEntity {
 
 	//Atributes ---------------------------------------
 
-
 	@NotBlank
 	private String				title;
 
@@ -34,11 +33,9 @@ public class Announcement extends DomainEntity {
 	@Past
 	private Date				moment;
 
-	
 	@URL
 	private String				moreInfo;
 
 	@NotBlank
 	private String				text;
 }
-

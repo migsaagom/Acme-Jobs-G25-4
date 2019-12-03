@@ -12,4 +12,6 @@
 	<acme:form-textbox code="worker.application.form.label.statement" path="statement" />
 	<acme:form-money code="worker.application.form.label.skills" path="skills" />
 	<acme:form-textbox code="worker.application.form.label.qualifications" path="qualifications" />
+	
+	<acme:form-return code="worker.application.form.return" />
 </acme:form>
