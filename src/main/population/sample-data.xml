@@ -182,12 +182,12 @@
 		<property name="amount" value="20000" />
 		<property name="currency" value="€" />
 	</bean>
-	
+
 	<bean id="money05" class="acme.framework.datatypes.Money">
 		<property name="amount" value="15000.98" />
 		<property name="currency" value="€" />
 	</bean>
-	
+
 	<bean id="money06" class="acme.framework.datatypes.Money">
 		<property name="amount" value="20000.00" />
 		<property name="currency" value="€" />
@@ -269,7 +269,7 @@
 		<property name="moment" value="2016/10/11 20:30" />
 
 	</bean>
-	
+
 	<bean id="curriculum03" class="acme.entities.curriculums.Curriculum">
 		<property name="name" value="Homer Jordan" />
 		<property name="skills" value="Patience" />
@@ -342,10 +342,10 @@
 	<bean id="job1" class="acme.entities.jobs.Job">
 		<property name="referenceNumber" value="EMP1-JOB1" />
 		<property name="finalMode" value="true" />
+		<property name="description" value="Santiago" />
 		<property name="title" value="Title 1" />
 		<property name="deadline" value="2020/10/10 10:00" />
 		<property name="salary" ref="money05" />
-		<property name="description" value="Santiago" />
 		<property name="moreInfo" value="http://www.example.com" />
 		<property name="employer" ref="employer1Employer" />
 	</bean>
@@ -353,23 +353,25 @@
 	<bean id="job2" class="acme.entities.jobs.Job">
 		<property name="referenceNumber" value="EMP1-JOB2" />
 		<property name="finalMode" value="true" />
+		<property name="description" value="Martin" />
 		<property name="title" value="Title 2" />
 		<property name="deadline" value="2030/09/10 23:00" />
 		<property name="salary" ref="money06" />
-		<property name="description" value="Martin" />
 		<property name="moreInfo" value="http://www.example.com" />
 		<property name="employer" ref="employer1Employer" />
+
 	</bean>
 
-<bean id="job3" class="acme.entities.jobs.Job">
+	<bean id="job3" class="acme.entities.jobs.Job">
 		<property name="referenceNumber" value="EMP2-JOB1" />
-		<property name="finalMode" value="true" />
+		<property name="finalMode" value="false" />
+		<property name="description" value="Gomez" />
 		<property name="title" value="Title 3" />
 		<property name="deadline" value="2010/09/10 23:00" />
 		<property name="salary" ref="money06" />
-		<property name="description" value="Gomez" />
 		<property name="moreInfo" value="http://www.example.com" />
 		<property name="employer" ref="employer2Employer" />
+
 	</bean>
 
 	<!-- Employer -->
@@ -397,12 +399,12 @@
 		<property name="sector" value="Sector 1" />
 		<property name="userAccount" ref="employer1UserAccount" />
 	</bean>
-	
-	
+
+
 	<bean name="employer1Authenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="employer1UserAccount" />
 	</bean>
-	
+
 	<bean name="employer2UserAccount" class="acme.framework.entities.UserAccount">
 		<property name="username" value="employer2" />
 		<property name="password" value="employer2" />
@@ -420,7 +422,7 @@
 			</list>
 		</property>
 	</bean>
-	
+
 	<bean name="employer2Employer" class="acme.entities.roles.Employer">
 		<property name="company" value="Company2, Inc." />
 		<property name="sector" value="Sector 2" />
@@ -446,6 +448,8 @@
 		</property>
 	</bean>
 
+
+	<!-- Worker -->
 	<bean name="worker1Worker" class="acme.entities.roles.Worker">
 		<property name="qualificationsRecord" value="Qualifications Record" />
 		<property name="skillsRecord" value="Skill Record" />
@@ -454,7 +458,7 @@
 	<bean name="worker1Authenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="worker1UserAccount" />
 	</bean>
-	
+
 	<bean name="worker2UserAccount" class="acme.framework.entities.UserAccount">
 		<property name="username" value="worker2" />
 		<property name="password" value="worker2" />
@@ -482,7 +486,7 @@
 	<bean name="worker2Authenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="worker2UserAccount" />
 	</bean>
-	
+
 	<!-- Application -->
 	<bean id="application1" class="acme.entities.applications.Application">
 		<property name="reference" value="EEEE-JJJJ:WWWW" />
@@ -494,7 +498,7 @@
 		<property name="worker" ref="worker1Worker" />
 		<property name="job" ref="job1" />
 	</bean>
-	
+
 	<bean id="application2" class="acme.entities.applications.Application">
 		<property name="reference" value="EEEE-JJJJ:WWXX" />
 		<property name="moment" value="2019/05/31 18:00" />
@@ -505,7 +509,7 @@
 		<property name="worker" ref="worker2Worker" />
 		<property name="job" ref="job2" />
 	</bean>
-	
+
 	<bean id="application3" class="acme.entities.applications.Application">
 		<property name="reference" value="EEEE-JJJJ:WWYY" />
 		<property name="moment" value="2019/05/31 18:00" />
@@ -517,4 +521,24 @@
 		<property name="job" ref="job2" />
 	</bean>
 
+	<!-- Dutty -->
+	<bean id="dutty1" class="acme.entities.dutties.Dutty">
+		<property name="title" value="Dutty1" />
+		<property name="description" value="Dutty number one" />
+		<property name="percentage" value="51" />
+		<property name="job" ref="job1"/>
+	</bean>
+	
+		<bean id="dutty2" class="acme.entities.dutties.Dutty">
+		<property name="title" value="Dutty2" />
+		<property name="description" value="Dutty number two" />
+		<property name="percentage" value="52" />
+		<property name="job" ref="job2"/>
+	</bean>
+		<bean id="dutty3" class="acme.entities.dutties.Dutty">
+		<property name="title" value="Dutty3" />
+		<property name="description" value="Dutty number three" />
+		<property name="percentage" value="53" />
+		<property name="job" ref="job1"/>
+	</bean>
 </beans>

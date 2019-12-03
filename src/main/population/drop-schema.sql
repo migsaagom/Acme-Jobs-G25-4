@@ -23,6 +23,10 @@
        drop 
        foreign key FK_6cyha9f1wpj0dpbxrrjddrqed;
 
+    alter table `dutty` 
+       drop 
+       foreign key `FKtradap7wam95wpbnwiy07h5u`;
+
     alter table `employer` 
        drop 
        foreign key FK_na4dfobmeuxkwf6p75abmb2tr;
@@ -58,6 +62,8 @@
     drop table if exists `curriculum`;
 
     drop table if exists `customisation`;
+
+    drop table if exists `dutty`;
 
     drop table if exists `employer`;
 
