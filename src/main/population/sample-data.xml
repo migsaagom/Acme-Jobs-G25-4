@@ -413,21 +413,26 @@
 			<bean class="acme.datatypes.UserIdentity">
 				<property name="name" value="Employer" />
 				<property name="surname" value="Two" />
-				<property name="email" value="employer1@acme.com" />
+				<property name="email" value="employer2@acme.com" />
 			</bean>
 		</property>
 		<property name="roles">
 			<list>
 				<ref bean="employer2Employer" />
+				<ref bean="employer2Authenticated" />
 			</list>
 		</property>
 	</bean>
 
 	<bean name="employer2Employer" class="acme.entities.roles.Employer">
-		<property name="company" value="Company2, Inc." />
+		<property name="company" value="employer2, Inc." />
 		<property name="sector" value="Sector 2" />
 		<property name="userAccount" ref="employer2UserAccount" />
 	</bean>
+	<bean name="employer2Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="employer2UserAccount" />
+	</bean>
+	
 	<!-- Worker -->
 	<bean name="worker1UserAccount" class="acme.framework.entities.UserAccount">
 		<property name="username" value="worker1" />

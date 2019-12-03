@@ -1,3 +1,4 @@
+
 package acme.features.employer.job;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,3 +66,4 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 	}
 
 }
+

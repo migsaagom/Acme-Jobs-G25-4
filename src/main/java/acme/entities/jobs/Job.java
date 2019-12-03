@@ -36,8 +36,6 @@ public class Job extends DomainEntity {
 	@NotNull
 	private Boolean finalMode;
 
-	@NotNull
-	private String description;
 
 	@NotBlank
 	private String title;
@@ -48,7 +46,11 @@ public class Job extends DomainEntity {
 
 	@NotNull
 	@Valid
-	private Money salary;
+	private Money				salary;
+
+	@NotBlank
+	@Column(length = 1024)
+	private String				description;
 
 	@URL
 	private String moreInfo;
