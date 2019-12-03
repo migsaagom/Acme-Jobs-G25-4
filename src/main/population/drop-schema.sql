@@ -23,6 +23,11 @@
        drop 
        foreign key FK_6cyha9f1wpj0dpbxrrjddrqed;
 
+
+    alter table `message_thread` 
+       drop 
+       foreign key `FKmuescdi9kf9ahnh7sur9hk3d1`;
+
     alter table `employer` 
        drop 
        foreign key FK_na4dfobmeuxkwf6p75abmb2tr;
@@ -30,6 +35,7 @@
     alter table `job` 
        drop 
        foreign key `FK3rxjf8uh6fh2u990pe8i2at0e`;
+
 
     alter table `provider` 
        drop 
@@ -63,7 +69,13 @@
 
     drop table if exists `investor`;
 
+
+    drop table if exists `message`;
+
+    drop table if exists `message_thread`;
+
     drop table if exists `job`;
+
 
     drop table if exists `offer`;
 
