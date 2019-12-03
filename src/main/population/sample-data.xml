@@ -326,5 +326,33 @@
 	<bean name="consumerAuthenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="consumerUserAccount" />
 	</bean>
+	
+	<!-- Message -->
+	<bean name="Message1" class="acme.entities.messages.Message">
+		<property name="title" value="Message01" />
+		<property name="moment" value="2016/10/11 20:30" />
+		<property name="tags" value="#Help" />
+		<property name="body" value="this is a message" />
+		<property name="user" ref="consumerAuthenticated" />
+	</bean>
+	
+	<bean name="Message2" class="acme.entities.messages.Message">
+		<property name="title" value="Message02" />
+		<property name="moment" value="2018/10/11 20:30" />
+		<property name="tags" value="#Help" />
+		<property name="body" value="this is another message" />
+		<property name="user" ref="consumerAuthenticated" />
+	</bean>
+	
+	<!-- MessageThread -->
+	<bean name="MessageThread1" class="acme.entities.messageThreads.MessageThread">
+		<property name="title" value="MT01" />
+		<property name="moment" value="2016/10/11 20:30" />
+		<property name="message" ref="Message1" />
+		
+	</bean>
+	
+	
+	
 
 </beans>

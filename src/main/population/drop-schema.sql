@@ -15,6 +15,10 @@
        drop 
        foreign key FK_6cyha9f1wpj0dpbxrrjddrqed;
 
+    alter table `message_thread` 
+       drop 
+       foreign key `FKmuescdi9kf9ahnh7sur9hk3d1`;
+
     alter table `provider` 
        drop 
        foreign key FK_b1gwnjqm6ggy9yuiqm0o4rlmd;
@@ -38,6 +42,10 @@
     drop table if exists `customisation`;
 
     drop table if exists `investor`;
+
+    drop table if exists `message`;
+
+    drop table if exists `message_thread`;
 
     drop table if exists `offer`;
 

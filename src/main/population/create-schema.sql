@@ -97,6 +97,26 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `message` (
+       `id` integer not null,
+        `version` integer not null,
+        `body` varchar(255),
+        `moment` datetime(6),
+        `tags` varchar(255),
+        `title` varchar(255),
+        `user` tinyblob,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `message_thread` (
+       `id` integer not null,
+        `version` integer not null,
+        `moment` datetime(6),
+        `title` varchar(255),
+        `message_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `offer` (
        `id` integer not null,
         `version` integer not null,
@@ -191,6 +211,11 @@
        add constraint FK_6cyha9f1wpj0dpbxrrjddrqed 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `message_thread` 
+       add constraint `FKmuescdi9kf9ahnh7sur9hk3d1` 
+       foreign key (`message_id`) 
+       references `message` (`id`);
 
     alter table `provider` 
        add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 
