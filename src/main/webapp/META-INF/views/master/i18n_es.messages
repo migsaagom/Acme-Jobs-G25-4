@@ -55,6 +55,17 @@ master.menu.requests = Peticiones
 master.menu.authenticated.request = Peticiones
 master.menu.provider.request.create = Crear Peticiones
 
+# master.menu.worker ########################################################
+master.menu.worker.application = Aplicaciones
+master.menu.worker.application.list = Listar aplicaciones
+master.menu.employer.job= Trabajos
+master.menu.auditor.auditRecord.list = Listar auditores
+master.menu.auditor.auditRecord.list.mine=Mis auditores
+
+
+# master.menu.employer ########################################################
+master.menu.employer.application = Aplicaciones
+master.menu.employer.application.list = Listar aplicaciones
 
 # master.menu.consumer ##########################################################
 
@@ -87,6 +98,12 @@ master.menu.authenticated=Autentificado
 master.menu.authenticated.offer=Ofertas
 master.menu.administrator.company-record=Company Record 
 master.menu.authenticated.challenge = Retos
+
+master.menu.employer = Empleado
+master.menu.worker = Trabajador
+master.menu.auditor = Auditor
+master.menu.authenticated.messagethread = Hilo de Mensajes
+
 # master.footer ###############################################################
 
 master.footer.title.about = Nosotros
