@@ -98,6 +98,12 @@ master.menu.authenticated=Autentificado
 master.menu.authenticated.offer=Ofertas
 master.menu.administrator.company-record=Company Record 
 master.menu.authenticated.challenge = Retos
+
+master.menu.employer = Empleado
+master.menu.worker = Trabajador
+master.menu.auditor = Auditor
+master.menu.authenticated.messagethread = Hilo de Mensajes
+
 # master.footer ###############################################################
 
 master.footer.title.about = Nosotros

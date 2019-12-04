@@ -12,6 +12,6 @@
 	<acme:form-return code="authenticated.messageThread.form.button.return"/>
 	
 	
-	<acme:menu-suboption code="authenticated.messageThread.form.messages" action="/authenticated/message/list?threadId=${id}"/>
+	<acme:form-submit code="authenticated.messageThread.form.messages" 	method="get" action="/authenticated/message/list?threadId=${id}"/>
 
 </acme:form>

@@ -96,6 +96,11 @@ master.menu.administrator.company-record=Company Record
 master.menu.investor = Investor
 master.menu.authenticated.investor = Investor
 
+master.menu.employer = Employer
+master.menu.worker = Worker
+master.menu.auditor = Auditor
+master.menu.authenticated.messagethread = Message Thread
+
 # master.footer ###############################################################
 
 master.footer.title.about = About us

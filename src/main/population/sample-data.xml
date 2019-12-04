@@ -582,7 +582,7 @@
 		<property name="skills" value="Skill 1, Skill 2" />
 		<property name="qualifications" value="Qualification 1, Qualification 2" />
 		<property name="worker" ref="worker1Worker" />
-		<property name="job" ref="job2" />
+		<property name="job" ref="job3" />
 	</bean>
 
 	<!-- Duty -->

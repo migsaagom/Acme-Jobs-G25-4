@@ -1,7 +1,7 @@
-employer.duty.list.label.title
-employer.duty.list.label.description
+employer.duty.list.label.title = Título
+employer.duty.list.label.description = Descripción
 
-employer.duty.form.return=Return
-employer.duty.form.label.title
-employer.duty.form.label.description
+employer.duty.form.return= Volver
+employer.duty.form.label.title = Título
+employer.duty.form.label.description = Descripción
 employer.duty.form.label.percentage = Tiempo estimado

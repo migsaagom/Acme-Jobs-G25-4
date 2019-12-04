@@ -14,5 +14,5 @@
 	
 	<acme:form-hidden path="id" />
 	
-	<acme:menu-suboption code="auditor.job.form.label.auditRecord" action="/auditor/audit-record/list?id=${id}"/>
+	<acme:form-submit code="auditor.job.form.label.auditRecord" method="get" action="/auditor/audit-record/list?id=${id}"/>
 </acme:form>
