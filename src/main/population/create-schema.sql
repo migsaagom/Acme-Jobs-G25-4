@@ -27,13 +27,34 @@
        `id` integer not null,
         `version` integer not null,
         `moment` datetime(6),
-        `qualifications` varchar(255),
+        `qualifications` varchar(1024),
         `reference` varchar(255),
-        `skills` varchar(255),
+        `skills` varchar(1024),
         `statement` varchar(255),
-        `status` varchar(255),
+        `status` integer,
         `job_id` integer not null,
         `worker_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `audit_record` (
+       `id` integer not null,
+        `version` integer not null,
+        `body` varchar(255),
+        `moment` datetime(6),
+        `status` integer,
+        `title` varchar(255),
+        `auditor_id` integer not null,
+        `job_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `auditor` (
+       `id` integer not null,
+        `version` integer not null,
+        `user_account_id` integer,
+        `firm` varchar(255),
+        `responsibility_statement` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -48,7 +69,7 @@
        `id` integer not null,
         `version` integer not null,
         `deadline` datetime(6),
-        `description` varchar(255),
+        `description` varchar(1024),
         `reward_goal_bronze_amount` double precision,
         `reward_goal_bronze_currency` varchar(255),
         `reward_goal_gold_amount` double precision,
@@ -63,7 +84,7 @@
        `id` integer not null,
         `version` integer not null,
         `ceo` varchar(255),
-        `description` varchar(255),
+        `description` varchar(1024),
         `email` varchar(255),
         `incorporated` bit not null,
         `name` varchar(255),
@@ -95,9 +116,19 @@
     create table `customisation` (
        `id` integer not null,
         `version` integer not null,
-        `customisations_en` varchar(255),
-        `customisations_es` varchar(255),
+        `customisations_en` varchar(1024),
+        `customisations_es` varchar(1024),
         `threshold` double precision,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `duty` (
+       `id` integer not null,
+        `version` integer not null,
+        `description` varchar(255),
+        `percentage` integer,
+        `title` varchar(255),
+        `job_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -124,7 +155,7 @@
        `id` integer not null,
         `version` integer not null,
         `deadline` datetime(6),
-        `description` varchar(255),
+        `description` varchar(1024),
         `final_mode` bit,
         `more_info` varchar(255),
         `reference_number` varchar(255),
@@ -168,7 +199,7 @@
         `min_amount` double precision,
         `min_currency` varchar(255),
         `moment` datetime(6),
-        `text` varchar(255),
+        `text` varchar(1024),
         `ticker` varchar(255),
         `title` varchar(255),
         primary key (`id`)
@@ -187,7 +218,7 @@
        `id` integer not null,
         `version` integer not null,
         `deadline` datetime(6),
-        `description` varchar(255),
+        `description` varchar(1024),
         `moment` datetime(6),
         `reward_amount` double precision,
         `reward_currency` varchar(255),
@@ -269,6 +300,21 @@
        foreign key (`worker_id`) 
        references `worker` (`id`);
 
+    alter table `audit_record` 
+       add constraint `FKdcrrgv6rkfw2ruvdja56un4ji` 
+       foreign key (`auditor_id`) 
+       references `auditor` (`id`);
+
+    alter table `audit_record` 
+       add constraint `FKlbvbyimxf6pxvbhkdd4vfhlnd` 
+       foreign key (`job_id`) 
+       references `job` (`id`);
+
+    alter table `auditor` 
+       add constraint FK_clqcq9lyspxdxcp6o4f3vkelj 
+       foreign key (`user_account_id`) 
+       references `user_account` (`id`);
+
     alter table `authenticated` 
        add constraint FK_h52w0f3wjoi68b63wv9vwon57 
        foreign key (`user_account_id`) 
@@ -278,6 +324,11 @@
        add constraint FK_6cyha9f1wpj0dpbxrrjddrqed 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `duty` 
+       add constraint `FKs2uoxh4i5ya8ptyefae60iao1` 
+       foreign key (`job_id`) 
+       references `job` (`id`);
 
     alter table `employer` 
        add constraint FK_na4dfobmeuxkwf6p75abmb2tr 

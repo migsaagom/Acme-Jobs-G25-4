@@ -46,6 +46,7 @@ master.menu.administrator.investor.create = Create investor
 master.menu.administrator.announcement.create = Create announcement
 master.menu.administrator.challenge.create = Create challenge
 master.menu.administrator.company-record.create = Create Company Record
+master.menu.employer.job = Job
 
 # master.menu.provider ########################################################
 
@@ -57,6 +58,8 @@ master.menu.provider.request.create = Create Requests
 # master.menu.worker ########################################################
 master.menu.worker.application = Applications
 master.menu.worker.application.list = List application
+master.menu.auditor.auditRecord.list = List auditor
+master.menu.auditor.auditRecord.list.mine=My auditors
 
 # master.menu.employer ########################################################
 master.menu.employer.application = Applications

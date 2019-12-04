@@ -43,50 +43,51 @@
 			<acme:menu-suboption code="master.menu.administrator.shutdown" action="/master/shutdown" />
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.administrator.customisations" action="/administrator/customisation/update" />
-		</acme:menu-option>
-		
-		<acme:menu-option code="master.menu.worker.application" access="hasRole('Worker')">
-			<acme:menu-suboption code="master.menu.worker.application.list" action="/worker/application/list" />
 			<acme:menu-separator />
-		</acme:menu-option>
-		
-		<acme:menu-option code="master.menu.employer.application" access="hasRole('Employer')">
-			<acme:menu-suboption code="master.menu.employer.application.list" action="/employer/application/list" />
+			<acme:menu-suboption code="master.menu.user-account.announcement" action="/administrator/announcement/list" />
+			<acme:menu-suboption code="master.menu.administrator.announcement.create" action="/administrator/announcement/create" />
 			<acme:menu-separator />
-		</acme:menu-option>
-
-		<acme:menu-option code="master.menu.requests" access="isAuthenticated()">
+			<acme:menu-suboption code="master.menu.authenticated.challenge" action="/authenticated/challenge/list" />
+			<acme:menu-suboption code="master.menu.administrator.challenge.create" action="/administrator/challenge/create" />
+			<acme:menu-separator />
+			<acme:menu-suboption code="master.menu.authenticated.offer" action="/authenticated/offer/list" />
+			<acme:menu-separator />
+			<acme:menu-suboption access="hasRole('Administrator')" code="master.menu.anonymous.investor"
+				action="/administrator/investor/list" />
+			<acme:menu-suboption access="hasRole('Administrator')" code="master.menu.administrator.investor.create"
+				action="/administrator/investor/create" />
+			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.authenticated.request" action="/authenticated/request/list" />
-			<acme:menu-suboption access="hasRole('Provider')" code="master.menu.provider.request.create" action="/authenticated/request/create" />
+			<acme:menu-separator />
+			<acme:menu-suboption code="master.menu.anonymous.company-record" action="/authenticated/company-record/list" />
+			<acme:menu-suboption code="master.menu.administrator.company-record.create" action="/administrator/company-record/create" />
 		</acme:menu-option>
 
-		<acme:menu-option code="master.menu.offers" access="isAuthenticated()">
+		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()&& !hasRole('Administrator')">
+			<acme:menu-suboption code="master.menu.anonymous.company-record" action="/authenticated/company-record/list" />
+			<acme:menu-separator />
+			<acme:menu-suboption code="master.menu.authenticated.request" action="/authenticated/request/list" />
+			<acme:menu-suboption access="hasRole('Provider')" code="master.menu.provider.request.create"
+				action="/authenticated/request/create" />
+			<acme:menu-separator />
+			<acme:menu-suboption code="master.menu.anonymous.investor" action="/authenticated/investor/list" />
+			<acme:menu-separator />
+			<acme:menu-suboption code="master.menu.authenticated.challenge" action="/authenticated/challenge/list" />
+			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.authenticated.offer" action="/authenticated/offer/list" />
 			<acme:menu-suboption access="hasRole('Consumer')" code="master.menu.consumer.offer.create" action="/authenticated/offer/create" />
+			<acme:menu-separator />
+			<acme:menu-suboption code="master.menu.anonymous.announcements" action="/authenticated/announcement/list" />
+			<acme:menu-separator />
+			<acme:menu-suboption access="hasRole('Auditor')" code="master.menu.auditor.auditRecord.list" action="/auditor/job/list" />
+			<acme:menu-separator />
+			<acme:menu-suboption access="hasRole('Auditor')" code="master.menu.auditor.auditRecord.list.mine" action="/auditor/job/list-mine" />
+			<acme:menu-suboption access="hasRole('Worker')" code="master.menu.worker.application" action="/worker/application/list-mine" />
+			<acme:menu-suboption access="hasRole('Employer')" code="master.menu.employer.job" action="/employer/job/list-mine" />
+			<acme:menu-separator />
+			<acme:menu-suboption access="hasRole('Employer')" code="master.menu.worker.application" action="/employer/application/list-mine" />
+			
 		</acme:menu-option>
-		
-		<acme:menu-option code="master.menu.anonymous.announcements" access="isAuthenticated()">
-			<acme:menu-suboption access="!hasRole('Administrator')" code="master.menu.anonymous.announcements" action="/authenticated/announcement/list" />
-			<acme:menu-suboption access="hasRole('Administrator')" code="master.menu.user-account.announcement" action="/administrator/announcement/list" />
-			<acme:menu-suboption access="hasRole('Administrator')" code="master.menu.administrator.announcement.create" action="/administrator/announcement/create" />
-		</acme:menu-option>
-		
-		<acme:menu-option code="master.menu.authenticated.challenge" access="isAuthenticated()">
-			<acme:menu-suboption code="master.menu.authenticated.challenge" action="/authenticated/challenge/list" />
-			<acme:menu-suboption access="hasRole('Administrator')" code="master.menu.administrator.challenge.create" action="/administrator/challenge/create" />
-		</acme:menu-option>
-		
-		<acme:menu-option code="master.menu.authenticated.investor" access="isAuthenticated()">
-			<acme:menu-suboption access="!hasRole('Administrator')" code="master.menu.anonymous.investor" action="/authenticated/investor/list" />
-			<acme:menu-suboption access="hasRole('Administrator')" code="master.menu.anonymous.investor" action="/administrator/investor/list" />
-			<acme:menu-suboption access="hasRole('Administrator')" code="master.menu.administrator.investor.create" action="/administrator/investor/create" />
-		</acme:menu-option>
-		
-		<acme:menu-option code="master.menu.anonymous.company-record" access="isAuthenticated()">
-			<acme:menu-suboption code="master.menu.anonymous.company-record" action="/authenticated/company-record/list" />
-			<acme:menu-suboption access="hasRole('Administrator')" code="master.menu.administrator.company-record.create" action="/administrator/company-record/create" />
-		</acme:menu-option>
-		
 	</acme:menu-left>
 
 	<acme:menu-right>

@@ -15,6 +15,18 @@
        drop 
        foreign key `FKmbjdoxi3o93agxosoate4sxbt`;
 
+    alter table `audit_record` 
+       drop 
+       foreign key `FKdcrrgv6rkfw2ruvdja56un4ji`;
+
+    alter table `audit_record` 
+       drop 
+       foreign key `FKlbvbyimxf6pxvbhkdd4vfhlnd`;
+
+    alter table `auditor` 
+       drop 
+       foreign key FK_clqcq9lyspxdxcp6o4f3vkelj;
+
     alter table `authenticated` 
        drop 
        foreign key FK_h52w0f3wjoi68b63wv9vwon57;
@@ -22,6 +34,10 @@
     alter table `consumer` 
        drop 
        foreign key FK_6cyha9f1wpj0dpbxrrjddrqed;
+
+    alter table `duty` 
+       drop 
+       foreign key `FKs2uoxh4i5ya8ptyefae60iao1`;
 
     alter table `employer` 
        drop 
@@ -59,6 +75,10 @@
 
     drop table if exists `application`;
 
+    drop table if exists `audit_record`;
+
+    drop table if exists `auditor`;
+
     drop table if exists `authenticated`;
 
     drop table if exists `challenge`;
@@ -70,6 +90,8 @@
     drop table if exists `curriculum`;
 
     drop table if exists `customisation`;
+
+    drop table if exists `duty`;
 
     drop table if exists `employer`;
 

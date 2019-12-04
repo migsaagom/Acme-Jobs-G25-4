@@ -26,38 +26,42 @@ import lombok.Setter;
 @Setter
 public class Job extends DomainEntity {
 
-	private static final long	serialVersionUID	= 1L;
+	private static final long serialVersionUID = 1L;
 
 	@NotBlank
 	@Column(unique = true)
 	@Length(min = 5, max = 10)
-	private String				referenceNumber;
+	private String referenceNumber;
 
 	@NotNull
-	private Boolean				finalMode;
+	private Boolean finalMode;
+
 
 	@NotBlank
-	private String				title;
+	private String title;
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				deadline;
+	private Date deadline;
 
 	@NotNull
 	@Valid
 	private Money				salary;
 
 	@NotBlank
+	@Column(length = 1024)
 	private String				description;
 
 	@URL
-	private String				moreInfo;
+	private String moreInfo;
 
-	//Relationship ----------------------
+	// Relationship ----------------------
 
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	private Employer			employer;
+	private Employer employer;
+
+
 
 }

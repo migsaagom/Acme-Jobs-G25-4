@@ -1,6 +1,7 @@
 
 package acme.entities.customisations;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -21,9 +22,11 @@ public class Customisation extends DomainEntity {
 	//Atributes ---------------------------------------
 
 	@NotBlank
+	@Column(length = 1024)
 	private String				customisationsEn;
 
 	@NotBlank
+	@Column(length = 1024)
 	private String				customisationsEs;
 
 	@NotNull

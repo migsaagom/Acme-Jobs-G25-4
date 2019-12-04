@@ -43,6 +43,7 @@ public class Offer extends DomainEntity {
 	private Money				max;
 
 	@NotBlank
+	@Column(length = 1024)
 	private String				text;
 
 	@Temporal(TemporalType.TIMESTAMP)
