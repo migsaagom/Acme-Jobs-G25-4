@@ -62,6 +62,7 @@ master.menu.worker.application.list = Listar aplicaciones
 # master.menu.auditor ########################################################
 master.menu.auditor.auditRecord = Auditores
 master.menu.auditor.auditRecord.list = Listar auditores
+master.menu.auditor.auditRecord.list.mine=Mis auditores
 
 # master.menu.employer ########################################################
 master.menu.employer.application = Aplicaciones
