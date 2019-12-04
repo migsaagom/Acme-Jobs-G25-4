@@ -58,7 +58,8 @@ master.menu.provider.request.create = Create Requests
 # master.menu.worker ########################################################
 master.menu.worker.application = Applications
 master.menu.worker.application.list = List application
-
+master.menu.auditor.auditRecord.list = List auditor
+master.menu.auditor.auditRecord.list.mine=My auditors
 # master.menu.employer ########################################################
 master.menu.employer.application = Applications
 master.menu.employer.application.list = List application
