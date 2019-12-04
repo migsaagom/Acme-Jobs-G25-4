@@ -120,25 +120,6 @@
         primary key (`id`)
     ) engine=InnoDB;
 
-
-    create table `message` (
-       `id` integer not null,
-        `version` integer not null,
-        `body` varchar(255),
-        `moment` datetime(6),
-        `tags` varchar(255),
-        `title` varchar(255),
-        `user` tinyblob,
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `message_thread` (
-       `id` integer not null,
-        `version` integer not null,
-        `moment` datetime(6),
-        `title` varchar(255),
-        `message_id` integer not null,
-
     create table `job` (
        `id` integer not null,
         `version` integer not null,
@@ -151,8 +132,31 @@
         `salary_currency` varchar(255),
         `title` varchar(255),
         `employer_id` integer not null,
-
         primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `message` (
+       `id` integer not null,
+        `version` integer not null,
+        `body` varchar(255),
+        `moment` datetime(6),
+        `tags` varchar(255),
+        `title` varchar(255),
+        `message_thread_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `message_thread` (
+       `id` integer not null,
+        `version` integer not null,
+        `moment` datetime(6),
+        `title` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `message_thread_authenticated` (
+       `message_thread_id` integer not null,
+        `members_id` integer not null
     ) engine=InnoDB;
 
     create table `offer` (
@@ -275,12 +279,6 @@
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 
-
-    alter table `message_thread` 
-       add constraint `FKmuescdi9kf9ahnh7sur9hk3d1` 
-       foreign key (`message_id`) 
-       references `message` (`id`);
-
     alter table `employer` 
        add constraint FK_na4dfobmeuxkwf6p75abmb2tr 
        foreign key (`user_account_id`) 
@@ -291,6 +289,20 @@
        foreign key (`employer_id`) 
        references `employer` (`id`);
 
+    alter table `message` 
+       add constraint `FKn5adlx3oqjna7aupm8gwg3fuj` 
+       foreign key (`message_thread_id`) 
+       references `message_thread` (`id`);
+
+    alter table `message_thread_authenticated` 
+       add constraint `FK6fiyetsdxp8o7dfgku1ia6xdh` 
+       foreign key (`members_id`) 
+       references `authenticated` (`id`);
+
+    alter table `message_thread_authenticated` 
+       add constraint `FKjb0tx79q4dpibs3mnkp6wfqvf` 
+       foreign key (`message_thread_id`) 
+       references `message_thread` (`id`);
 
     alter table `provider` 
        add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 

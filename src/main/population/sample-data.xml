@@ -344,7 +344,8 @@
 		<property name="moment" value="2016/10/11 20:30" />
 		<property name="tags" value="#Help" />
 		<property name="body" value="this is a message" />
-		<property name="user" ref="consumerAuthenticated" />
+		<property name="messageThread" ref="MessageThread1" />
+		
 	</bean>
 	
 	<bean name="Message2" class="acme.entities.messages.Message">
@@ -352,18 +353,48 @@
 		<property name="moment" value="2018/10/11 20:30" />
 		<property name="tags" value="#Help" />
 		<property name="body" value="this is another message" />
-		<property name="user" ref="consumerAuthenticated" />
+		<property name="messageThread" ref="MessageThread1" />
+
+	</bean>
+	
+	<bean name="Message3" class="acme.entities.messages.Message">
+		<property name="title" value="Message03" />
+		<property name="moment" value="2018/12/11 20:30" />
+		<property name="tags" value="#Message, #F" />
+		<property name="body" value="This is a message in MessageThread2" />
+		<property name="messageThread" ref="MessageThread2" />
+	</bean>
+	
+	<bean name="Message4" class="acme.entities.messages.Message">
+		<property name="title" value="Message04" />
+		<property name="moment" value="2017/12/11 20:30" />
+		<property name="tags" value="#Message, #F" />
+		<property name="body" value="This is another message in MessageThread2" />
+		<property name="messageThread" ref="MessageThread2" />
 	</bean>
 	
 	<!-- MessageThread -->
 	<bean name="MessageThread1" class="acme.entities.messageThreads.MessageThread">
 		<property name="title" value="MT01" />
 		<property name="moment" value="2016/10/11 20:30" />
-		<property name="message" ref="Message1" />
-		
+		<property name="members">
+			<list>
+				<ref bean="employer1Authenticated"/>
+				<ref bean="employer2Authenticated"/>
+			</list>
+		</property>
 	</bean>
 	
-	
+	<bean name="MessageThread2" class="acme.entities.messageThreads.MessageThread">
+		<property name="title" value="MT02" />
+		<property name="moment" value="2017/01/12 10:34" />
+		<property name="members">
+			<list>
+				<ref bean="worker1Authenticated"/>
+				<ref bean="worker2Authenticated"/>
+			</list>
+		</property>
+	</bean>	
 	
 
 	<!-- Job -->

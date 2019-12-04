@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.message;
+package acme.features.authenticated.messageThread;
 
 import java.util.Collection;
 
@@ -17,7 +17,7 @@ import acme.framework.services.AbstractListService;
 public class AuthenticatedMessageThreadListMineService implements AbstractListService<Authenticated, MessageThread> {
 
 	@Autowired
-	private AuthenticatedMessageRepository repository;
+	private AuthenticatedMessageThreadRepository repository;
 
 
 	@Override
@@ -33,7 +33,8 @@ public class AuthenticatedMessageThreadListMineService implements AbstractListSe
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "message");
+		request.unbind(entity, model, "title", "moment", "members");
+
 	}
 
 	@Override
@@ -44,7 +45,7 @@ public class AuthenticatedMessageThreadListMineService implements AbstractListSe
 		Principal principal;
 
 		principal = request.getPrincipal();
-		result = this.repository.findManyByUserId(principal.getAccountId());
+		result = this.repository.findManyByUserId(principal.getActiveRoleId());
 
 		return result;
 	}
