@@ -1,5 +1,5 @@
 
-package acme.features.employer.dutty;
+package acme.features.employer.duty;
 
 import java.util.Collection;
 
@@ -8,18 +8,16 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.duties.Duty;
 import acme.entities.roles.Employer;
-import acme.features.employer.job.EmployerJobRepository;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class EmployerDuttyListService implements AbstractListService<Employer, Duty> {
+public class EmployerDutyListService implements AbstractListService<Employer, Duty> {
 
 	@Autowired
-	EmployerDuttyRepository	repository;
+	EmployerDutyRepository repository;
 
-	
 
 	@Override
 	public boolean authorise(final Request<Duty> request) {
@@ -44,7 +42,7 @@ public class EmployerDuttyListService implements AbstractListService<Employer, D
 		Collection<Duty> result;
 
 		int id = request.getModel().getInteger("id");
-		result = this.repository.findManyDutty(id);
+		result = this.repository.findManyDuty(id);
 
 		return result;
 	}

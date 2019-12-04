@@ -80,6 +80,7 @@
 			<acme:menu-suboption code="master.menu.anonymous.announcements" action="/authenticated/announcement/list" />
 			<acme:menu-separator />
 			<acme:menu-suboption access="hasRole('Auditor')" code="master.menu.auditor.auditRecord.list" action="/auditor/job/list" />
+			<acme:menu-separator />
 			<acme:menu-suboption access="hasRole('Auditor')" code="master.menu.auditor.auditRecord.list.mine" action="/auditor/job/list-mine" />
 			<acme:menu-suboption access="hasRole('Worker')" code="master.menu.worker.application" action="/worker/application/list-mine" />
 			<acme:menu-suboption access="hasRole('Employer')" code="master.menu.employer.job" action="/employer/job/list-mine" />

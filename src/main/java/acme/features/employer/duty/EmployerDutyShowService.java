@@ -1,4 +1,4 @@
-package acme.features.employer.dutty;
+package acme.features.employer.duty;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,10 +10,10 @@ import acme.framework.components.Request;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class EmployerDuttyShowService implements AbstractShowService<Employer, Duty> {
+public class EmployerDutyShowService implements AbstractShowService<Employer, Duty> {
 
 	@Autowired
-	EmployerDuttyRepository repository;
+	EmployerDutyRepository repository;
 
 	@Override
 	public boolean authorise(Request<Duty> request) {
